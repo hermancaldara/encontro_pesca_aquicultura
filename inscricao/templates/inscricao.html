@@ -1,0 +1,16 @@
+<html>
+<body>
+  <form method="post" action="">
+    {% csrf_token %}
+    {% for field in inscricao_form %}
+      <div class="field">
+        <div>{{ field.label_tag }}:</div>
+        <div>{{ field }}</div>
+        <div>{{ field.help_text }}</div>
+        <div>{{ field.errors }}</div>
+      </div>
+    {% endfor %}
+    <input type="submit" value=" Enviar " />
+  </form>
+</body>
+</html>
