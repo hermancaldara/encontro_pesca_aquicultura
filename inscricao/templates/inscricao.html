@@ -1,6 +1,6 @@
 <html>
 <body>
-  <form method="post" action="">
+  <form method="post" action="" enctype="multipart/form-data">
     {% csrf_token %}
     {% for field in inscricao_form %}
       <div class="field">

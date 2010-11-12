@@ -6,7 +6,7 @@ from forms import InscricaoForm
 def inscricao(request):
     inscricao_form = InscricaoForm()
     if request.method == 'POST':
-        inscricao_form = InscricaoForm(request.POST)
+        inscricao_form = InscricaoForm(request.POST, request.FILES)
         if inscricao_form.is_valid():
             inscricao = inscricao_form.save(commit=False)
             inscricao.save()
