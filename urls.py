@@ -6,8 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
-    (r'^$', 'encontro_pesca_aquicultura.views.index'),
-    (r'^inscricao/', include('encontro_pesca_aquicultura.inscricao.urls')),
+    (r'^$', include('encontro_pesca_aquicultura.inscricao.urls')),
     (r'^site_media/(.*)$', 'django.views.static.serve',
       {'document_root': settings.MEDIA_ROOT}
     ),
