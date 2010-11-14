@@ -21,8 +21,12 @@ class Inscricao(models.Model):
     pais = models.CharField(verbose_name='País', max_length=30)
     endereco = models.CharField(verbose_name='Endereço', max_length=200)
     telefone = models.CharField(verbose_name='Telefone', max_length=10)
-    fax = models.CharField(verbose_name='Fax', max_length=10)
-    celular = models.CharField(verbose_name='Celular', max_length=10)
+    fax = models.CharField(verbose_name='Fax', max_length=10, blank=True,)
+    celular = models.CharField(
+        verbose_name='Celular',
+        max_length=10,
+        blank=True,
+    )
     email = models.EmailField(verbose_name='E-mail')
     categoria = models.CharField(
         verbose_name='Categoria do participante', 
@@ -44,6 +48,7 @@ class Inscricao(models.Model):
     titulo_trabalho = models.CharField(
         verbose_name="Título do trabalho (Preencha apenas se for apresentar algum trabalho)", 
         max_length=100,
+        blank=True,
     )
     anexo = models.FileField(
         verbose_name='Anexar trabalho', 
