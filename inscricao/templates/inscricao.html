@@ -1,16 +1,29 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns= "http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+<head>
+  <title>Inscrição</title>
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/estilo.css" />
+</head>
 <body>
-  <form method="post" action="" enctype="multipart/form-data">
-    {% csrf_token %}
-    {% for field in inscricao_form %}
-      <div class="field">
-        <div>{{ field.label_tag }}:</div>
-        <div>{{ field }}</div>
-        <div>{{ field.help_text }}</div>
-        <div>{{ field.errors }}</div>
+  <div id="tudo">
+    <img src="{{ MEDIA_URL }}/imagens/banner.png" alt="II Encontro Nacional dos Núcleos de Pesquisa aplicada em Pesca e Aquicultura " />
+    <form method="post" action="" enctype="multipart/form-data">
+      {% csrf_token %}
+      {% for field in inscricao_form %}
+        <div class="field">
+          <div>
+            {{ field.label_tag }}:
+          </div>
+            {{ field }}
+          <div>
+          </div>
+          <div>{{ field.errors }}</div>
+        </div>
+      {% endfor %}
+      <div id="submit">
+        <input type="submit" value=" Enviar " />
       </div>
-    {% endfor %}
-    <input type="submit" value=" Enviar " />
-  </form>
+    </form>
+  </div>
 </body>
 </html>

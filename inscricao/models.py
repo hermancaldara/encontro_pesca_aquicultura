@@ -42,9 +42,8 @@ class Inscricao(models.Model):
         default = None,
     )
     titulo_trabalho = models.CharField(
-        verbose_name="Título do trabalho", 
+        verbose_name="Título do trabalho (Preencha apenas se for apresentar algum trabalho)", 
         max_length=100,
-        help_text='Preencha apenas se for apresentar algum trabalho.'
     )
     anexo = models.FileField(
         verbose_name='Anexar trabalho', 
