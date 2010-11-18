@@ -20,8 +20,17 @@ class Inscricao(models.Model):
     )
     pais = models.CharField(verbose_name='País', max_length=30)
     endereco = models.CharField(verbose_name='Endereço', max_length=200)
-    telefone = models.CharField(verbose_name='Telefone', max_length=10)
-    fax = models.CharField(verbose_name='Fax', max_length=10, blank=True,)
+    telefone = models.CharField(
+        verbose_name='Telefone',
+        max_length=10,
+        help_text="Exemplo:2299991111",
+    )
+    fax = models.CharField(
+        verbose_name='Fax',
+        max_length=10,
+        help_text="Exemplo:2299991111",
+        blank=True,
+    )
     celular = models.CharField(
         verbose_name='Celular',
         max_length=10,
@@ -53,6 +62,11 @@ class Inscricao(models.Model):
     anexo = models.FileField(
         verbose_name='Anexar trabalho', 
         upload_to='docs/', 
+        blank=True,
+    )
+    poster = models.FileField(
+        verbose_name='Anexar pôster', 
+        upload_to='posters/', 
         blank=True,
     )
     

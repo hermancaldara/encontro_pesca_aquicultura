@@ -18,6 +18,12 @@ body {
     margin-bottom: 15px;
 }
 
+.help_text {
+    font-size: 14px;
+    font-style: italic;
+    margin-left: 35px;
+}
+
 input[type="text"] {
     width: 400px;
 }
