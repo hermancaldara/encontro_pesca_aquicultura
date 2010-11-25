@@ -8,11 +8,10 @@ def inscricao(request):
     if request.method == 'POST':
         inscricao_form = InscricaoForm(request.POST, request.FILES)
         if inscricao_form.is_valid():
-            inscricao = inscricao_form.save(commit=False)
+            inscricao = inscricao_form.save()
             inscricao.save()
             return render_to_response(
                 'inscricao_finalizada.html',
-                context_instance=RequestContext(request)
             )
     return render_to_response(
         'inscricao.html',
