@@ -1,31 +1,32 @@
-As a Encontro de Pesca e Aquicultura user
-I want to use the system
-So that I can test the system
+Como um usuário do sistema do Encontro de Pesca e Aquicultura
+Eu quero usar o sistema
+Para que eu possa testar o sistema
 
-Scenario 1 - Searching for Inscrição
-Given
-    I go to "http://localhost:8000"
-When
-    I fill "nome" textbox with "Herman"
-    And I click "enviar" button and wait
-Then
-    I see "Inscrição" title
-    And I see "id_instituicao" textbox is empty
-    And I see that current page contains "<li>Este campo é obrigatório.</li>"
+Cenário 1 - Inscrição realizada sem sucesso
+Dado que 
+    Eu navego para "http://localhost:8000"
+Quando
+    Eu preencho a caixa de texto "nome" com "Usuário de teste"
+    E eu clico no botão "enviar" e espero
+Então
+    Eu vejo o título "Inscrição"
+    E eu vejo que a caixa de texto "id_instituicao" está vazia
+    E eu vejo que a página atual contém "<li>Este campo é obrigatório.</li>"
     
-Scenario 2 - Searching for Inscrição
-Given
-    I go to "http://localhost:8000"
-When
-    I fill "nome" textbox with "Herman"
-    And I fill "instituicao" textbox with "Instituição de teste"
-    And I fill "nucleo" textbox with "Núcleo de teste"
-    And I fill "pais" textbox with "Brasil"
-    And I fill "endereco" textbox with "Rua de teste"
-    And I fill "telefone" textbox with "2299991111"
-    And I fill "email" textbox with "teste@teste.com.br"
-    And I select the option with text of "Estudante" in "categoria" select
-    And I check the "apresenta_trabalho" radio
-    And I click "enviar" button and wait
-Then
-    I see that current page contains "<h1>Inscrição realizada com sucesso!</h1>"
+Cenário 2 - Inscrição realizada com sucesso
+Dado que 
+    Eu navego para "http://localhost:8000"
+Quando
+    Eu preencho a caixa de texto "nome" com "Usuário de teste"
+    E eu preencho a caixa de texto "instituicao" com "Instituição de teste"
+    E eu preencho a caixa de texto "nucleo" com "Núcleo de teste"
+    E eu preencho a caixa de texto "pais" com "Brasil"
+    E eu preencho a caixa de texto "endereco" com "Rua de teste"
+    E eu preencho a caixa de texto "telefone" com "2299991111"
+    E eu preencho a caixa de texto "email" com "teste@teste.com.br"
+    E eu seleciono o item com texto "Estudante" na select "categoria"
+    E eu marco a radio "apresenta_trabalho"
+    E eu clico no botão "enviar" e espero
+Então
+    Eu vejo o título "Inscrição Finalizada"
+    E eu vejo que a página atual contém "<h1>Inscrição realizada com sucesso!</h1>"
